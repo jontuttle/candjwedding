@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en" ng-app>
+  <head>
+    <title>Johnny & Chloe Wedding</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/sitestyle.css">
+    <link rel="stylesheet" href="/css/jquery.fullPage.css">
+    
+    <script type="text/javascript" src="/js/app.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.fullPage.js"></script>
+   
+    
+  </head>
+  
+  
+  <body>
+    <div class="mainNav">
+      <div data-menuanchor="home" class="logo"><a href="#home" class="logotext">JOHNNY & CHLOE</a></div>
+      <ul id="nav">
+        <li data-menuanchor="story"><a href="#story">OUR STORY</a></li>
+        <li data-menuanchor="day"><a href="#day">THE DAY</a></li>
+        <li data-menuanchor="location"><a href="#location">THE LOCATION</a></li>
+        <li data-menuanchor="weddingparty"><a href="#weddingparty">WEDDING PARTY</a></li>
+        <li data-menuanchor="gifts"><a href="#gifts">GIFTS</a></li>
+        <li data-menuanchor="blog"><a href="#blog">BLOG</a></li>
+        <li data-menuanchor="rsvp"><a href="#rsvp">RSVP</a></li>
+      </ul>
+    </div>
+    <div id="fullpage">
+      <div class="section" data-anchor="home">
+        <div class="hero">
+          
+        </div>
+      </div>
+      <div class="section overlay" data-anchor="story"> 
+          <div class="slide">
+            <div class="story1">
+          
+            </div>
+          </div>
+          <div class="slide">
+            <div class="story2">
+          
+            </div>
+          </div>
+          <div class="slide">
+            <div class="story3">
+          
+            </div>
+          </div>
+          <div class="slide">
+            <div class="story4">
+          
+            </div>
+          </div>
+      </div>
+      <div class="section" data-anchor="day">
+        <div class="day">
+          
+        </div>
+      </div>
+      <div class="section" data-anchor="location"> 
+       <div class="location">
+          
+        </div>
+      </div>
+      <div class="section" data-anchor="weddingparty">
+        <div class="weddingparty">
+          
+        </div>
+      </div>
+      <div class="section" data-anchor="gifts">
+        <div class="gifts">
+          
+                  
+          
+        </div>
+      </div>
+      <div class="section" data-anchor="blog">
+        <div class="blog">
+          
+        </div>
+      </div>
+      <div class="section" data-anchor="rsvp">
+        <div class="rsvp">
+          
+           <div class="container" ng-controller="ChatController">
+                  <div class="page-header">
+                    <h1>Chat Example</h1>
+                  </div>
+                  <div class="row">
+                    <div class="span3">
+                      <ul class="nav nav-list well">
+                        <li class="nav-header">Local Users</li>
+                        <li ng-repeat="user in roster" ng-bind="user">
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="span9">
+                      <table class="table table-striped table-bordered">
+                        <thead>
+                          <tr>
+                            <th class="span2">Name</th>
+                            <th class="span7">Text</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr ng-repeat="msg in messages">
+                            <td class="span2" ng-bind="msg.name"></td>
+                            <td class="span7" ng-bind="msg.text"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="row controls">
+                        <form ng-submit="send()">
+                          <div class="span2"><input type="text" class="input-block-level" ng-model="name" ng-change="setName()" placeholder="Your Name"></div>
+                          <div class="input-append span7">
+                            <input type="text" class="span6" ng-model="text" placeholder="Message">
+                            <input type="submit" class="span1 btn btn-primary" value="Send" ng-disabled="!text">
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          
+        </div>
+      </div>
+      
+    </div>
+ 
+
+  </body>
+  
+  <script>
+    $(document).ready(function() {
+      $('#fullpage').fullpage({
+          anchors:['home','story', 'day', 'location','weddingparty', 'gifts', 'blog','rsvp'],
+          menu: '#nav'
+      });
+      
+    });
+  </script>
+  
+</html>
+
+
+
+
+
+       
